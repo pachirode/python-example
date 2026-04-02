@@ -76,3 +76,27 @@ hatch env prune
 hatch env create
 hatch run cowsay -t "Hello, world!"
 ```
+
+### 文档
+
+```pyproject.toml
+[tool.hatch.envs.docs]
+dependencies = [
+  "mkdocs"
+]
+[tool.hatch.envs.docs.scripts]
+build = "mkdocs build --clean --strict"
+serve = "mkdocs serve --dev-addr localhost:8000"
+```
+
+```bash
+# 启动服务
+hatch run docs:serve
+```
+
+### 构建
+
+通过 `tool.hatch.build` 表进行配置
+
+### 发布
+
